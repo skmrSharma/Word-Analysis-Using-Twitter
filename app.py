@@ -1,24 +1,13 @@
 from flask import Flask,render_template,request,jsonify
 from flask.templating import render_template
 import subprocess
-# pandas not used here ?
-# import pandas as pd
 import csv
 from sentiment import sentimentCount
 from hash_src import sourceCount,hashtagCount
 from tweetsFilter import tweetsFilter
 
 app=Flask(__name__)
-app.debug=True
-
-# @app.after_request
-# def add_header(response):
-#     """
-#     Add headers to both force latest IE rendering engine or Chrome Frame,
-#     and also to cache the rendered page for 10 minutes.
-#     """
-#     response.headers['Cache-Control'] = 'no-store'
-#     return response
+# app.debug=True
 
 @app.route('/',methods=['GET','POST'])
 def home():

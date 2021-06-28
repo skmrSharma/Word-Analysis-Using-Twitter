@@ -135,7 +135,7 @@ def tw_search(api):
     csvFile = open('result.csv', 'w', encoding="utf-8")
     # Use csv Writer
     csvWriter = csv.writer(csvFile)
-    csvWriter.writerow(["created", "username", "source", "text", "retwc", "hashtag", "followers", "friends", "polarity", "subjectivity"])
+    csvWriter.writerow(["created", "username", "source", "text", "retwc", "hashtag", "followers", "friends", "polarity","geolocation","geoenable"])
 
     for tweet in tweepy.Cursor(api.search,
                                q=qw,
@@ -172,8 +172,8 @@ def tw_search(api):
         # Dongho 03/28/16
         text_blob = TextBlob(unidecode.unidecode(text))
         polarity = text_blob.polarity
-        subjectivity = text_blob.subjectivity
-        csvWriter.writerow([created, username,source, text, retwc, hashtag, followers, friends, polarity, subjectivity])
+        # subjectivity = text_blob.subjectivity
+        csvWriter.writerow([created, username,source, text, retwc, hashtag, followers, friends, polarity, authorloc, geoenable])
         counter = counter + 1
         if (counter == c):
             break
