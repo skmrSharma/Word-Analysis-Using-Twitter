@@ -89,7 +89,10 @@ $("#search-form").submit(function(e){
 	sessionStorage.setItem("searchTerm", st);
 	$.post("/search-form", {search: st}, function(data){
 	 	console.log("value posted and server returned" + JSON.stringify(data));
+	 	$("#output-area").html("<h1 id=\"loading-symb\">Done</h1>");
 	 },"json");
+	// $("#output-area").html("<h1 class=\"loading-word\">Working <span></span></h1>");
+	$("#output-area").html("<i id=\"loading-symb\" class=\"fa fa-spinner fa-pulse\" style=\"font-size:40px;color:rgb(0, 128, 255)\"></i>");
 });
 
 $("#tweets-btn").click(function(e){
