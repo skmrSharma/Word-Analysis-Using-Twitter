@@ -29,6 +29,8 @@ The following packages are needed:
 **Note**:
 This app uses Google Charts API to create pie charts. If the pie charts are not displayed, try running the app in Incognito mode of your browser. The reason is some browsers may block the API since it uses cross-site cookies. Cookies created in Incognito mode are deleted upon closing the window, so it might work there.
 
+You also need to register as a developer at https://developer.twitter.com/en/apply-for-access and download the `auth.k` file which contains the authorization key for accessing the Twitter API. Keep the `auth.k` file in the same directory as `app.py`. 
+
 ### How-to-run
 
 + Clone this repo or download and extract the zip.
